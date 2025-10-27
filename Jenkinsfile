@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-    DOCKERHUB_REPO = credentials(devops-assingment2) // or set via Jenkins credentials or environment
-    DOCKERHUB_CRED = Devops // Jenkins credential ID for Docker Hub
+    DOCKERHUB_REPO = credentials('devops-assingment2') // or set via Jenkins credentials or environment
+    DOCKERHUB_CRED = 'Devops' // Jenkins credential ID for Docker Hub
     IMAGE_NAME = "${DOCKERHUB_REPO}/ticket-app"
     IMAGE_TAG = "${env.BUILD_NUMBER ?: 'local'}"
   }
